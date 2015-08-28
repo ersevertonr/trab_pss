@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Cadastro Apostador</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="layout_padrao.xhtml">  
+            <ui:define name="content">
+                <style>
+                    .input {
+                        width: 100%;
+                    }  
+                </style>
+                <h:form>
+                    <b:container>
+                        <h:messages errorStyle="color: red"/>
+                        <h1><b>Cadastro de Apostador</b></h1> 
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="ID:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputText id="id" disabled="true" value="#{apostadorBEAN.apostador.id}"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Nome:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputText id="nome" value="#{apostadorBEAN.apostador.nome}" required="true" requiredMessage="Favor preencher o campo 'Nome'"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Sobrenome:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputText id="sobrenome" value="#{apostadorBEAN.apostador.sobrenome}" required="true" requiredMessage="Favor preencher o campo 'Sobrenome'"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Apelido:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputText id="apelido" value="#{apostadorBEAN.apostador.apelido}" required="true" requiredMessage="Favor preencher o campo 'Apelido'"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Email:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputText id="email" value="#{apostadorBEAN.apostador.email}" required="true" requiredMessage="Favor preencher o campo 'Email'"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Data Nascimento:"/>
+                            </b:column>
+                            <b:column span="2">                                
+                                <b:datepicker id="datainicio" value="#{apostadorBEAN.apostador.datanascimento}" changeMonth="true" changeYear="true" 
+                                              mode="popup-icon" placeholder="Clique aqui!">
+                                    <f:convertDateTime pattern="dd/MM/yy"/>
+                                </b:datepicker>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="1">
+                                <h:outputLabel value="Senha:"/>
+                            </b:column>
+                            <b:column span="5">
+                                <h:inputSecret id="senha" value="#{apostadorBEAN.apostador.senha}" required="true" requiredMessage="Favor preencher o campo 'Senha'"/>
+                            </b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="2">
+                                <h:commandButton value="Confirmar" action="#{apostadorBEAN.confirmarApostador()}" styleClass="btn btn-primary input"/>
+                            </b:column>
+                            <b:column span="2">
+                                <h:commandButton value="Voltar" action="consulta_apostador" styleClass="btn input" immediate="true"/>
+                                <br/>
+                                <br/>
+                            </b:column>
+                        </b:row>
+                    </b:container>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

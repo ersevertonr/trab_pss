@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:b="http://bootsfaces.net/ui">
+  <h:head>
+    <title>Cadastrar Local Origem</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="layout_padrao.xhtml">  
+      <ui:define name="content">
+        <style>
+          .input {
+            width: 100%;
+          }  
+
+          .erros{
+            color: red
+          }
+        </style>
+        <h:form>
+          <b:container>
+            <h1><b>Cadastro de local de origem</b></h1> 
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="ID:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="id" disabled="true" value="#{localOrigemBEAN.origem.id}"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Cidade:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="cidade" disabled="false" value="#{localOrigemBEAN.origem.cidade}" required="true" pt:placeholder="Maringá" requiredMessage=" *Cidade é um campo obrigatório"/>
+                <h:message for="cidade" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Estado:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="estado" disabled="false" value="#{localOrigemBEAN.origem.estado}" required="true" pt:placeholder="Paraná" requiredMessage=" *Estado é um campo obrigatório"/>
+                <h:message for="estado" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="País:"/></b:column>
+              <b:column span="5">
+                <h:inputText id="pais" disabled="false" value="#{localOrigemBEAN.origem.pais}" required="true" pt:placeholder="Brasil" requiredMessage=" *País é um campo obrigatório"/>
+                <h:message for="pais" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="2">
+                <h:commandButton value="Confirmar" action="#{localOrigemBEAN.confirmarLocalOrigem()}" styleClass="btn btn-primary input"/>
+              </b:column>
+              <b:column span="2">
+                <h:link outcome="consulta_localOrigem" value="Cancelar" styleClass="btn input" style="border-color: tomato"/>
+              </b:column>
+            </b:row>
+          </b:container>
+        </h:form>
+        <br/>
+        <center>
+          <h:link outcome="index" value="Retornar ao Menu Inicial"  styleClass="btn btn-primary"/>
+        </center>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

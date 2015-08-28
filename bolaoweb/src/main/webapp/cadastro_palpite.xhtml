@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+  <h:head>
+    <title>Cadastro Palpite</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="layout_padrao.xhtml">  
+      <ui:define name="content">
+        <style>
+          .input {
+            width: 100%;
+          }  
+
+          .erros{
+            color: red
+          }
+        </style>
+        <h:form>
+          <b:container>
+            <h1><b>Cadastro Palpite</b></h1> 
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="ID:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="id" disabled="true" value="#{palpiteBEAN.palpite.id}"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Id.Apostador:"/>
+              </b:column>    
+              <b:column span="5">
+                <h:inputText id="idApostador" disabled="false"  value="#{palpiteBEAN.palpite.idApostador}" required="true" requiredMessage=" *ID do Apostador é obrigatório">
+                  <f:validateLongRange minimum="0" maximum="999"/>
+                </h:inputText>
+                <h:message for="idApostador" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Id.Partida:"/>
+              </b:column>    
+              <b:column span="5">
+                <h:inputText id="idPartida" disabled="false" value="#{palpiteBEAN.palpite.idPartida}" required="true" requiredMessage=" *ID da partida é obrigatório">
+                  <f:validateLongRange minimum="0" maximum="999"/>
+                </h:inputText>
+                <h:message for="idPartida" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Gols.casa:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="golsCasa" disabled="false" value="#{palpiteBEAN.palpite.golsCasa}" required="true" requiredMessage=" *Quantidade de gols do time da casa é obrigatório">
+                  <f:validateLongRange minimum="0" maximum="999"/>
+                </h:inputText>
+                <h:message for="golsCasa" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Gols.visitante:"/>
+              </b:column>
+              <b:column span="5">
+                <h:inputText id="golsVisitante" disabled="false" value="#{palpiteBEAN.palpite.golsVisitante}" required="true" requiredMessage=" *Quantidade de gols do time visitante é obrigatório">
+                  <f:validateLongRange minimum="0" maximum="999"/>
+                </h:inputText>
+                <h:message for="golsVisitante" errorClass="erros"/>
+              </b:column>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="1">
+                <h:outputLabel value="Dt.Cadastro:"/>
+            </b:column>
+              <b:column span="2">
+                <h:inputText id="dataCadastro" readonly="true" value="#{palpiteBEAN.palpite.dataCadastro}" required="true">
+                  <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:inputText></b:column><br/>
+            </b:row>
+            <br/>
+            <b:row>
+              <b:column span="2">
+                <h:commandButton value="Confirmar" action="#{palpiteBEAN.confirmaPalpite()}" styleClass="btn btn-primary input"/>
+              </b:column>
+              <b:column span="2">
+                <h:link outcome="consulta_palpite" value="Cancelar" styleClass="btn input" style="border-color: tomato"/>
+              </b:column>
+            </b:row>
+            <br/>
+          </b:container>
+        </h:form>
+        <br/>
+        <center>
+          <h:link outcome="index" value="Retornar ao Menu Inicial"  styleClass="btn btn-primary"/>
+        </center>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+

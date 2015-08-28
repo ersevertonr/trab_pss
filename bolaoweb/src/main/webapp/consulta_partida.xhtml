@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Consulta de Campeonato</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="layout_padrao.xhtml">  
+            <ui:define name="content">
+                <style>
+                    .input {
+                        width: 100%;
+                    }  
+                    .tabela {
+                        border: 1px solid;                        
+                        width: 100%;                        
+                    }
+                    .header {
+                        border: 1px;                       
+                        text-align: center;
+                        padding: 2px;
+                        background:none repeat scroll 0 0 #428bca;
+                        color: #fff;
+                    }
+                    .rowAntes{
+                        text-align:center;
+                        background: none repeat scroll 0 0 #ffffff;	
+                     }
+                     .rowDepois{
+                        text-align:center;
+                        background: none repeat scroll 0 0 #e2e2e2;
+                     }
+                </style>
+                <h:form>
+                    <b:container>
+                        <h1><b>Consulta de Partidas</b></h1> 
+                        <br/>
+                        <h:commandButton value="+ Nova Partida" action="#{partidasBEAN.novaPartida()}" styleClass="btn btn-primary"/> <br/><br/>
+                        <b:row>
+                            <b:column span="2"><h:outputLabel value="Pesquisar Partida:"/></b:column>
+                            <b:column span="2"><h:selectOneMenu value="#{partidasBEAN.tipoFiltro}">
+                                    <f:selectItem itemValue="dataPartida" itemLabel="Data partida"/>
+                                    <f:selectItem itemValue="nomeTimeCasa" itemLabel="Nome time casa"/>
+                                    <f:selectItem itemValue="nomeTimeVisitante" itemLabel="Nome time visitante"/>
+                            </h:selectOneMenu></b:column>
+                            <b:column span="7"><h:inputText id="filtro" value="#{partidasBEAN.filtro}" styleClass="input"/></b:column>
+                            <b:column span="1"><h:commandButton action="#{partidasBEAN.filtrarPartidas()}" value="Buscar" styleClass="input"/></b:column>                            
+                        </b:row>
+                        <br/>
+                        <h:dataTable value="#{partidasBEAN.consultarPartidas()}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
+                            <!--<h:column>
+                                <f:facet name="header">
+                                    ID
+                                </f:facet>
+                                <h:outputText value="#{tabela.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    Data
+                                </f:facet>
+                                <h:outputText value="#{tabela.data}"/>
+                            </h:column>-->
+                            <h:column>
+                                <f:facet name="header">
+                                    Data
+                                </f:facet>
+                                <h:outputFormat value="{0, date, dd/MM/yyyy}">
+                                    <f:param value="#{tabela.data}"/>
+                                </h:outputFormat>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    Time Casa
+                                </f:facet>
+                                <h:outputText value="#{tabela.timeCasa.nome}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    Gols Time Casa
+                                </f:facet>
+                                <h:outputText value="#{tabela.golsTimeCasa}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                </f:facet>
+                                <h:outputText value="X"/>
+                            </h:column>                            
+                            <h:column>
+                                <f:facet name="header">
+                                    Gols Time Visitante
+                                </f:facet>
+                               <h:outputText value="#{tabela.golsTimeVisitante}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    Time Visitante
+                                </f:facet>
+                                <h:outputText value="#{tabela.timeVisitante.nome}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    Ações
+                                </f:facet>
+                                <b:row>
+                                    <b:column span="1"></b:column>
+                                    <b:column span="4"><h:commandButton value="Editar" action="#{partidasBEAN.carregarPartida(tabela)}" styleClass="input"/></b:column>
+                                    <b:column span="1"></b:column>
+                                    <b:column span="4"><h:commandButton value="Remover" action="#{partidasBEAN.deletePartida(tabela)}" styleClass="input"/></b:column>
+                                </b:row>
+                            </h:column>
+                        </h:dataTable>  
+                    </b:container>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

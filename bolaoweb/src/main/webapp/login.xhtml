@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <meta charset="utf-8"></meta>
+        <meta http-equivequiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Bolão Web</title>
+    </h:head>
+    <h:body>
+        <style>
+            .input {
+                width: 100%;
+            }
+        </style>
+        <h:form>
+            <b:container>
+                <b:jumbotron>
+                    <center>
+                        <h1>Bolão Web</h1>
+                        <br/>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Usuário"/>
+                            <h:inputText id="usuario" value="#{loginBEAN.usuario}" styleClass="input"/>
+                            <h:outputLabel value="Senha"/>
+                            <h:inputSecret id="senha" value="#{loginBEAN.senha}" styleClass="input"/>
+                        </h:panelGrid>
+                        <br/>
+                        <h:commandButton value="Entrar" action="#{loginBEAN.ValidarLogin()}" styleClass="btn btn-primary"/>
+                    </center>
+                </b:jumbotron>
+            </b:container>
+        </h:form>
+    </h:body>
+</html>

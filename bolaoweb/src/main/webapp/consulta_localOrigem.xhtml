@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+  <h:head>
+    <title>Consulta Local origem</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="layout_padrao.xhtml">  
+      <ui:define name="content">
+        <style>
+          .input {
+            width: 100%;
+          }  
+          .tabela {
+            border: 1px solid;                        
+            width: 100%;                        
+          }
+          .header {
+            border: 1px;                       
+            text-align: center;
+            padding: 2px;
+            background:none repeat scroll 0 0 #428bca;
+            color: #fff;
+          }
+          .rowAntes{
+            text-align:center;
+            background: none repeat scroll 0 0 #ffffff;	
+          }
+          .rowDepois{
+            text-align:center;
+            background: none repeat scroll 0 0 #e2e2e2;
+          }
+        </style>
+        <h:form>
+          <b:container>
+            <h1><b>Consulta de local origem</b></h1> 
+            <br/>
+            <h:commandButton value="+ Novo Local Origem" action="#{localOrigemBEAN.novoLocalOrigem()}" styleClass="btn btn-primary"/> <br/><br/>
+            <b:row>
+              <b:column span="2"><h:outputLabel value="Buscar local origem:"/></b:column>
+              <b:column span="9"><h:inputText id="filtro" value="#{localOrigemBEAN.filtro}" styleClass="input"/></b:column>
+              <b:column span="1"><h:commandButton value="Buscar" styleClass="input"/></b:column>                            
+            </b:row>
+            <br/>
+            <h:dataTable value="#{localOrigemBEAN.listarLocalOrigem()}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
+              <h:column>
+                <f:facet name="header">
+                  ID
+                </f:facet>
+                <h:outputText value="#{tabela.id}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  Cidade
+                </f:facet>
+                <h:outputText value="#{tabela.cidade}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  Estado
+                </f:facet>
+                <h:outputText value="#{tabela.estado}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  País
+                </f:facet>
+                <h:outputText  value="#{tabela.pais}"/>
+              </h:column>
+              <h:column>
+                <f:facet name="header">
+                  Ações
+                </f:facet>
+                <b:row>
+                  <b:column span="1"></b:column>
+                  <b:column span="4"><h:commandButton value="Editar" action="#{localOrigemBEAN.carregaLocalOrigem(tabela)}" styleClass="input"/></b:column>
+                  <b:column span="1"></b:column>
+                  <b:column span="4"><h:commandButton value="Remover" action="#{localOrigemBEAN.excluirLocalOrigem(tabela)}" styleClass="input"/></b:column>
+                  <b:column span="1"></b:column>
+                </b:row>
+              </h:column>
+            </h:dataTable>
+          </b:container>    
+        </h:form>
+        <br/>
+        <center>
+          <h:link outcome="index" value="Retornar ao Menu Inicial" styleClass="btn btn-primary"/>
+        </center>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+
