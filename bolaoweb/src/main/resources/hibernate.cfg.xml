@@ -4,17 +4,17 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/BolaoWeb?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bolaoweb?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">mandriva</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>    
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <mapping class="bolaoweb.model.Usuario"/>
+    <mapping class="bolaoweb.model.Times"/>
+    <mapping class="bolaoweb.model.Partidas"/>
+    <mapping class="bolaoweb.model.Palpite"/>
+    <mapping class="bolaoweb.model.Operador"/>
+    <mapping class="bolaoweb.model.LocalOrigem"/>
     <mapping class="bolaoweb.model.Campeonato"/>
     <mapping class="bolaoweb.model.Apostador"/>
-    <mapping class="bolaoweb.model.Operador"/>
-    <mapping class="bolaoweb.model.Usuario"/>
-    <mapping class="bolaoweb.model.Partidas"/>
-    <mapping class="bolaoweb.model.LocalOrigem"/>
-    <mapping class="bolaoweb.model.Palpite"/>
-    <mapping class="bolaoweb.model.Times"/>
   </session-factory>
 </hibernate-configuration>

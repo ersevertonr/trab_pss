@@ -51,22 +51,22 @@ public class LoginBEAN {
         }
 
         apostadorTemp.setId(1);
-        apostadorTemp.setNome("Admin");
-        apostadorTemp.setSobrenome("Administrador");
-        apostadorTemp.setApelido("admin");
-        apostadorTemp.setEmail("teste@teste.com.br");
-        apostadorTemp.setSenha("111");
+        apostadorTemp.setNome("Marcelo");
+        apostadorTemp.setSobrenome("Pinheiro");
+        apostadorTemp.setApelido("Teste");
+        apostadorTemp.setEmail("marcelo@teste.com.br");
+        apostadorTemp.setSenha("Pinheiro");
         
         if (listaApostador.isEmpty()){
             apostadorDAO.inserirApostador(apostadorTemp);
         }
 
         operadorTemp.setId(1);
-        operadorTemp.setNome("Teste");
-        operadorTemp.setSobrenome("tst");
-        operadorTemp.setEmail("teste@teste.com.br");
+        operadorTemp.setNome("Admin");
+        operadorTemp.setSobrenome("adm");
+        operadorTemp.setEmail("admin@teste.com.br");
         operadorTemp.setBoadmin(Boolean.TRUE);
-        operadorTemp.setSenha("teste");
+        operadorTemp.setSenha("Admin");
 
         if (listaOperador.isEmpty()){
             operadorDAO.inserirOperador(operadorTemp);
