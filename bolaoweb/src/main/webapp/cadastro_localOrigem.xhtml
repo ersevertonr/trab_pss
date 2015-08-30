@@ -38,7 +38,7 @@
                 <h:outputLabel value="Cidade:"/>
               </b:column>
               <b:column span="5">
-                <h:inputText id="cidade" disabled="false" value="#{localOrigemBEAN.origem.cidade}" required="true" pt:placeholder="Maringá" requiredMessage=" *Cidade é um campo obrigatório"/>
+                <h:inputText id="cidade" disabled="false" value="#{localOrigemBEAN.origem.cidade}" required="true"  requiredMessage=" *Cidade é um campo obrigatório"/>
                 <h:message for="cidade" errorClass="erros"/>
               </b:column>
             </b:row>
@@ -48,7 +48,7 @@
                 <h:outputLabel value="Estado:"/>
               </b:column>
               <b:column span="5">
-                <h:inputText id="estado" disabled="false" value="#{localOrigemBEAN.origem.estado}" required="true" pt:placeholder="Paraná" requiredMessage=" *Estado é um campo obrigatório"/>
+                <h:inputText id="estado" disabled="false" value="#{localOrigemBEAN.origem.estado}" required="true"  requiredMessage=" *Estado é um campo obrigatório"/>
                 <h:message for="estado" errorClass="erros"/>
               </b:column>
             </b:row>
@@ -57,8 +57,8 @@
               <b:column span="1">
                 <h:outputLabel value="País:"/></b:column>
               <b:column span="5">
-                <h:inputText id="pais" disabled="false" value="#{localOrigemBEAN.origem.pais}" required="true" pt:placeholder="Brasil" requiredMessage=" *País é um campo obrigatório"/>
-                <h:message for="pais" errorClass="erros"/>
+                <h:inputText id="pais" disabled="false" value="#{localOrigemBEAN.origem.pais}" required="true"  requiredMessage=" *País é um campo obrigatório"/>
+                <h:message for="pais" errorClass="erros"/> 
               </b:column>
             </b:row>
             <br/>

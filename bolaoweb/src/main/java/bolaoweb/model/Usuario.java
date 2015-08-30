@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -19,9 +22,16 @@ public class Usuario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @NotNull
+    @Size(min=5, message="O nome não pode ter menos que 5 caracteres!")
     private String nome;
+    @NotNull
+    @Size(min=5, message="O sobrenome não pode ter menos que 5 caracteres!")
     private String sobrenome;
+    @Pattern(regexp = "^[\\w\\-]+(\\.[\\w\\-]+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$", message="E-mail com formato incorreto.")
     private String email;
+    @NotNull
+    @Size(min = 5, message = "A senha não pode ter menos de 5 caracteres!" )
     private String senha;
 
     public Integer getId() {
