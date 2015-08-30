@@ -13,10 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-/**
- *
- * @author Massao
- */
+
 @Entity
 @Table
 public class Palpite implements Serializable {

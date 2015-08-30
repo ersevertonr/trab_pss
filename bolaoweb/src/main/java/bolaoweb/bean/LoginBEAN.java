@@ -44,7 +44,7 @@ public class LoginBEAN {
 
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            Date datanasc = formatter.parse("11/11/1992");
+            Date datanasc = formatter.parse("09/08/1991");
             apostadorTemp.setDatanascimento(datanasc);
         } catch (ParseException ex) {
             Logger.getLogger(LoginBEAN.class.getName()).log(Level.SEVERE, null, ex);
@@ -93,7 +93,7 @@ public class LoginBEAN {
         for (Apostador apos : listaApostador) {
             if (apos.getNome().equals(usuario) && apos.getSenha().equals(senha)) {
                 apostador = apos;
-                return "index";
+                return "indexUsuario";
             }
         }
 

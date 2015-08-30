@@ -9,9 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-/**
- * @author Danilo Passafaro
- */
+
 @FacesConverter("bolaoweb.util.timeConverter")
 public class timeConverter implements Converter{
     

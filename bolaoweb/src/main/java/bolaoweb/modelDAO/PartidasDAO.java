@@ -13,9 +13,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
-/**
- * @author Danilo Passafaro
- */
+
 public class PartidasDAO {
     private Session sessao;
     private Transaction transacao;

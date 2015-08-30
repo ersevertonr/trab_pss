@@ -8,10 +8,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-/**
- *
- * @author Massao
- */
 public class TimesDAO {
 
   private Session session;

@@ -8,10 +8,7 @@ import java.util.Objects;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-/**
- *
- * @author Massao
- */
+
 @ManagedBean
 @SessionScoped
 public class PalpiteBEAN {

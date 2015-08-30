@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <body>
+        <ui:composition>
+            <b:navBar brand="Bolão Web" brandHref="index.xhtml">
+                <b:navbarLinks pull="left">
+                    <b:navLink value="Principal" href="index.xhtml"></b:navLink>
+                    <b:dropMenu value="Consulta">
+                        <b:navLink value="Campeonato" href="consulta_campeonato.xhtml"></b:navLink>
+                        <b:navLink value="Palpites" href="consulta_palpite.xhtml"></b:navLink>
+                        <b:navLink value="Partidas" href="consulta_partida.xhtml"></b:navLink>
+                        <b:navLink value="Times" href="consulta_time.xhtml"></b:navLink>                    
+                    </b:dropMenu>
+                    
+                    <b:navLink value="Ranking" href="consulta_ranking_apostador.xhtml"></b:navLink>
+                </b:navbarLinks>
+                <b:navbarLinks pull="right">
+                    <b:navLink value="Contato" href="contato.xhtml"></b:navLink>
+                    <b:navLink value="Sair" href="login.xhtml"></b:navLink>                
+                </b:navbarLinks>
+            </b:navBar>    
+        </ui:composition>
+    </body>
+</html>
