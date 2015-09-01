@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Apostador;
 import bolaoweb.model.Operador;
@@ -18,7 +18,7 @@ import javax.faces.context.FacesContext;
 
 @ManagedBean
 @RequestScoped
-public class LoginBEAN {
+public class ControllerLogin {
 
     private Apostador apostador = new Apostador();
     private ApostadorDAO apostadorDAO = new ApostadorDAO();
@@ -32,7 +32,7 @@ public class LoginBEAN {
     public String usuario;
     public String senha;
 
-    public LoginBEAN() {
+    public ControllerLogin() {
         setUsuario("");
         setSenha("");
 
@@ -48,7 +48,7 @@ public class LoginBEAN {
             Date datanasc = formatter.parse("09/08/1991");
             apostadorTemp.setDatanascimento(datanasc);
         } catch (ParseException ex) {
-            Logger.getLogger(LoginBEAN.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         apostadorTemp.setId(1);

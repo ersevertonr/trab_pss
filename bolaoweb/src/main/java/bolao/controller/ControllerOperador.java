@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Operador;
 import bolaoweb.modelDAO.OperadorDAO;
@@ -9,14 +9,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class OperadorBEAN {
+public class ControllerOperador {
 
     private Operador operador = new Operador();
     private OperadorDAO operadorDAO = new OperadorDAO();
     private List<Operador> listaOperador;
     public String filtro;
 
-    public OperadorBEAN() {
+    public ControllerOperador() {
         setFiltro("");
     }
 
@@ -51,7 +51,7 @@ public class OperadorBEAN {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final OperadorBEAN other = (OperadorBEAN) obj;
+        final ControllerOperador other = (ControllerOperador) obj;
         if (!Objects.equals(this.operador, other.operador)) {
             return false;
         }

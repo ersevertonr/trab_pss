@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.LocalOrigem;
 import bolaoweb.modelDAO.LocalOrigemDAO;
@@ -10,14 +10,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class LocalOrigemBEAN {
+public class ControllerLocalOrigem {
 
   private LocalOrigem origem = new LocalOrigem();
   private LocalOrigemDAO origemDAO = new LocalOrigemDAO();
   private List<LocalOrigem> listaOrigem;
   public String filtro;  
 
-  public LocalOrigemBEAN() {
+  public ControllerLocalOrigem() {
     setFiltro("");
   }
   
@@ -52,7 +52,7 @@ public class LocalOrigemBEAN {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final LocalOrigemBEAN other = (LocalOrigemBEAN) obj;
+    final ControllerLocalOrigem other = (ControllerLocalOrigem) obj;
     if (!Objects.equals(this.origem, other.origem)) {
       return false;
     }

@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
@@ -11,14 +11,14 @@ import java.util.Objects;
 
 @ManagedBean
 @SessionScoped
-public class TimesBEAN implements Serializable {
+public class ControllerTimes implements Serializable {
 
   private Times equipe = new Times();
   private TimesDAO equipeDAO = new TimesDAO();
   private List<Times> listaEquipe;
   public String filtro;
 
-  public TimesBEAN() {
+  public ControllerTimes() {
     setFiltro("");
   }
   
@@ -77,7 +77,7 @@ public class TimesBEAN implements Serializable {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final TimesBEAN other = (TimesBEAN) obj;
+    final ControllerTimes other = (ControllerTimes) obj;
     if (!Objects.equals(this.equipe, other.equipe)) {
       return false;
     }

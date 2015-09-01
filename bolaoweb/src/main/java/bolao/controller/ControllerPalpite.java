@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Palpite;
 import bolaoweb.modelDAO.PalpiteDAO;
@@ -11,14 +11,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class PalpiteBEAN {
+public class ControllerPalpite {
 
   private Palpite palpite = new Palpite();
   private PalpiteDAO palpiteDAO = new PalpiteDAO();
   private List<Palpite> listaPalpite;
   public String filtro;
 
-  public PalpiteBEAN() {
+  public ControllerPalpite() {
   }
   
   public void setFiltro(String filtro){
@@ -77,7 +77,7 @@ public class PalpiteBEAN {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final PalpiteBEAN other = (PalpiteBEAN) obj;
+    final ControllerPalpite other = (ControllerPalpite) obj;
     if (!Objects.equals(this.palpite, other.palpite)) {
       return false;
     }

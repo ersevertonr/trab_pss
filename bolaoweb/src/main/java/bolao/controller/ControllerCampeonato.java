@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Campeonato;
 import bolaoweb.modelDAO.CampeonatoDAO;
@@ -9,14 +9,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class CampeonatoBEAN {
+public class ControllerCampeonato {
 
     private Campeonato campeonato = new Campeonato();
     private CampeonatoDAO campeonatoDAO = new CampeonatoDAO();
     private List<Campeonato> listaCampeonato;
     public String filtro;
 
-    public CampeonatoBEAN() {
+    public ControllerCampeonato() {
         setFiltro("");
     }
 
@@ -51,7 +51,7 @@ public class CampeonatoBEAN {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final CampeonatoBEAN other = (CampeonatoBEAN) obj;
+        final ControllerCampeonato other = (ControllerCampeonato) obj;
         if (!Objects.equals(this.campeonato, other.campeonato)) {
             return false;
         }

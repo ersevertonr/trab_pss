@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Partidas;
 import bolaoweb.modelDAO.PartidasDAO;
@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class PartidasBEAN {
+public class ControllerPartida {
     
     private Partidas partidas = new Partidas();
     private PartidasDAO partidasDAO = new PartidasDAO();
@@ -36,7 +36,7 @@ public class PartidasBEAN {
         this.filtro = filtro;
     }
 
-    public PartidasBEAN() {
+    public ControllerPartida() {
     }
     
     public List<Partidas> consultarPartidas() throws ParseException{
@@ -132,7 +132,7 @@ public class PartidasBEAN {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final PartidasBEAN other = (PartidasBEAN) obj;
+        final ControllerPartida other = (ControllerPartida) obj;
         if (!Objects.equals(this.partidas, other.partidas)) {
             return false;
         }

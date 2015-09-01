@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Apostador;
 import bolaoweb.modelDAO.ApostadorDAO;
@@ -9,14 +9,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class ApostadorBEAN {
+public class ControllerApostador {
 
     private Apostador apostador = new Apostador();
     private ApostadorDAO apostadorDAO = new ApostadorDAO();
     private List<Apostador> listaApostador;
     public String filtro;
 
-    public ApostadorBEAN() {
+    public ControllerApostador() {
         setFiltro("");
     }
 
@@ -51,7 +51,7 @@ public class ApostadorBEAN {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ApostadorBEAN other = (ApostadorBEAN) obj;
+        final ControllerApostador other = (ControllerApostador) obj;
         if (!Objects.equals(this.apostador, other.apostador)) {
             return false;
         }
