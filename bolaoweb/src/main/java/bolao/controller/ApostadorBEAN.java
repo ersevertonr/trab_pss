@@ -9,14 +9,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class ControllerApostador {
+public class ApostadorBEAN {
 
     private Apostador apostador = new Apostador();
     private ApostadorDAO apostadorDAO = new ApostadorDAO();
     private List<Apostador> listaApostador;
     public String filtro;
 
-    public ControllerApostador() {
+    public ApostadorBEAN() {
         setFiltro("");
     }
 
@@ -51,7 +51,7 @@ public class ControllerApostador {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ControllerApostador other = (ControllerApostador) obj;
+        final ApostadorBEAN other = (ApostadorBEAN) obj;
         if (!Objects.equals(this.apostador, other.apostador)) {
             return false;
         }

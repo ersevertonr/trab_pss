@@ -11,14 +11,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class ControllerPalpite {
+public class PalpiteBEAN {
 
   private Palpite palpite = new Palpite();
   private PalpiteDAO palpiteDAO = new PalpiteDAO();
   private List<Palpite> listaPalpite;
   public String filtro;
 
-  public ControllerPalpite() {
+  public PalpiteBEAN() {
   }
   
   public void setFiltro(String filtro){
@@ -77,7 +77,7 @@ public class ControllerPalpite {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final ControllerPalpite other = (ControllerPalpite) obj;
+    final PalpiteBEAN other = (PalpiteBEAN) obj;
     if (!Objects.equals(this.palpite, other.palpite)) {
       return false;
     }

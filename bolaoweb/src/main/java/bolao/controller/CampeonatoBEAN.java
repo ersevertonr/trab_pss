@@ -9,14 +9,14 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class ControllerCampeonato {
+public class CampeonatoBEAN {
 
     private Campeonato campeonato = new Campeonato();
     private CampeonatoDAO campeonatoDAO = new CampeonatoDAO();
     private List<Campeonato> listaCampeonato;
     public String filtro;
 
-    public ControllerCampeonato() {
+    public CampeonatoBEAN() {
         setFiltro("");
     }
 
@@ -51,7 +51,7 @@ public class ControllerCampeonato {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ControllerCampeonato other = (ControllerCampeonato) obj;
+        final CampeonatoBEAN other = (CampeonatoBEAN) obj;
         if (!Objects.equals(this.campeonato, other.campeonato)) {
             return false;
         }

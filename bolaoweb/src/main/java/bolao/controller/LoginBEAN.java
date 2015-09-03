@@ -18,7 +18,7 @@ import javax.faces.context.FacesContext;
 
 @ManagedBean
 @RequestScoped
-public class ControllerLogin {
+public class LoginBEAN {
 
     private Apostador apostador = new Apostador();
     private ApostadorDAO apostadorDAO = new ApostadorDAO();
@@ -32,7 +32,7 @@ public class ControllerLogin {
     public String usuario;
     public String senha;
 
-    public ControllerLogin() {
+    public LoginBEAN() {
         setUsuario("");
         setSenha("");
 
@@ -48,7 +48,7 @@ public class ControllerLogin {
             Date datanasc = formatter.parse("09/08/1991");
             apostadorTemp.setDatanascimento(datanasc);
         } catch (ParseException ex) {
-            Logger.getLogger(ControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginBEAN.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         apostadorTemp.setId(1);

@@ -11,14 +11,14 @@ import java.util.Objects;
 
 @ManagedBean
 @SessionScoped
-public class ControllerTimes implements Serializable {
+public class TimesBEAN implements Serializable {
 
   private Times equipe = new Times();
   private TimesDAO equipeDAO = new TimesDAO();
   private List<Times> listaEquipe;
   public String filtro;
 
-  public ControllerTimes() {
+  public TimesBEAN() {
     setFiltro("");
   }
   
@@ -77,7 +77,7 @@ public class ControllerTimes implements Serializable {
     if (getClass() != obj.getClass()) {
       return false;
     }
-    final ControllerTimes other = (ControllerTimes) obj;
+    final TimesBEAN other = (TimesBEAN) obj;
     if (!Objects.equals(this.equipe, other.equipe)) {
       return false;
     }

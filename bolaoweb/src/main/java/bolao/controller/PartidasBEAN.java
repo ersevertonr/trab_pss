@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
-public class ControllerPartida {
+public class PartidasBEAN {
     
     private Partidas partidas = new Partidas();
     private PartidasDAO partidasDAO = new PartidasDAO();
@@ -36,7 +36,7 @@ public class ControllerPartida {
         this.filtro = filtro;
     }
 
-    public ControllerPartida() {
+    public PartidasBEAN() {
     }
     
     public List<Partidas> consultarPartidas() throws ParseException{
@@ -132,7 +132,7 @@ public class ControllerPartida {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ControllerPartida other = (ControllerPartida) obj;
+        final PartidasBEAN other = (PartidasBEAN) obj;
         if (!Objects.equals(this.partidas, other.partidas)) {
             return false;
         }
