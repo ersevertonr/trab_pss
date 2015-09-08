@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Partidas;
 import bolaoweb.modelDAO.PartidasDAO;

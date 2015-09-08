@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
