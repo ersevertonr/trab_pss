@@ -55,7 +55,8 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>4.2.0.Final</version>
+            <version>4.1.0.Final</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
