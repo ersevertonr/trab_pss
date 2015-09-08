@@ -25,6 +25,7 @@
                             <b:column span="5"><h:inputText id="id" disabled="true" value="#{partidasBEAN.partidas.id}"/></b:column>
                         </b:row>
                         <br/>-->
+                         
                         <b:row>
                             <b:column span="1"><h:outputLabel value="Data"/></b:column>
                             <b:column span="2"><b:datepicker id="data" value="#{partidasBEAN.partidas.data}" /></b:column>
@@ -67,6 +68,18 @@
                             <b:column span="5"><h:inputText id="golsTimeVisitante" value="#{partidasBEAN.partidas.golsTimeVisitante}"
                                       required="true" requiredMessage="Campo Gols Time Visitante é obrigatório!"/></b:column>
                             <b:column span="4"><h:message for="golsTimeVisitante" style="color: red;" /></b:column>
+                        </b:row>
+                        <br/>
+                        <b:row>
+                            <b:column span="2"><h:outputLabel value="Campeonato"/></b:column>
+                            <b:column span="4">
+                                <h:selectOneMenu id="campeonato" value="#{partidasBEAN.partidas.campeonato}" converter="bolaoweb.util.campeonatoConverter"
+                                                 required="true" requiredMessage="Campo Campeonato é obrigatório!">
+                                    <f:selectItems value="#{campeonatoBEAN.listaCampeonato()}" var="campeonatoLista"
+                                                   itemValue="#{campeonatoLista}" itemLabel="#{campeonatoLista.nome}"></f:selectItems>
+                                </h:selectOneMenu>
+                            </b:column>
+                            <b:column span="4"><h:message for="timeCasa" style="color: red;" /></b:column>
                         </b:row>
                         <br/>
                         <b:row>

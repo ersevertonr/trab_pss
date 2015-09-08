@@ -94,7 +94,7 @@ public class PartidasDAO {
             partida.setData(p.getData());
             partida.setGolsTimeCasa(p.getGolsTimeCasa());
             partida.setGolsTimeVisitante(p.getGolsTimeVisitante());
-
+            partida.setCampeonato(p.getCampeonato());
             sessao.save(partida);
             transacao.commit();
         

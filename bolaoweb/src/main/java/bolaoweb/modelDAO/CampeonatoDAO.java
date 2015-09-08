@@ -14,7 +14,15 @@ public class CampeonatoDAO {
     private Session session;
     private Transaction trans;
     private List<Campeonato> listaCampeonato;
+    
+    public List<Campeonato> getList() {
+    session = HibernateUtil.getSessionFactory().openSession();
+    Criteria criteria = session.createCriteria(Campeonato.class);
+    this.listaCampeonato = criteria.list();
 
+    return this.listaCampeonato;
+  }
+    
     public List<Campeonato> getLista( String filtro ){
         session = HibernateUtil.getSessionFactory().openSession();
 
