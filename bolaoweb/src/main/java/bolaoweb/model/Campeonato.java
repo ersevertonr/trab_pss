@@ -29,8 +29,7 @@ public class Campeonato implements Serializable{
     private Boolean tipomatamata;
     private String observacao;
 
-    //@Column(length=100, name="PARTIDA", nullable=true)
-    //private String partida;
+    
 
     public Integer getId() {
         return id;

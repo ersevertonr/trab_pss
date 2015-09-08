@@ -1,4 +1,4 @@
-package bolaoweb.bean;
+package bolao.controller;
 
 import bolaoweb.model.Apostador;
 import bolaoweb.model.Operador;
@@ -27,7 +27,8 @@ public class LoginBEAN {
     private Operador operador = new Operador();
     private OperadorDAO operadorDAO = new OperadorDAO();
     private List<Operador> listaOperador;
-
+    private FacesMessage message;
+    
     public String usuario;
     public String senha;
 
@@ -94,7 +95,7 @@ public class LoginBEAN {
             if (apos.getNome().equals(usuario) && apos.getSenha().equals(senha)) {
                 apostador = apos;
                 return "indexUsuario";
-            }
+            } 
         }
 
         for (Operador oper : listaOperador) {
