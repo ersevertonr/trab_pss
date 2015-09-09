@@ -1,14 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-<html xmxmlns="http://www.w3.org/1999/xhtml"
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:b="http://bootsfaces.net/ui">
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <meta charset="utf-8"></meta>
         <meta http-equivequiv="X-UA-Compatible" content="IE=edge"></meta>
@@ -20,9 +16,8 @@ and open the template in the editor.
             <ui:define name="content">
                 <b:container>
                     <b:jumbotron>
-                        <h1>Bem vindo ao Bolão Web</h1>
-                        <p>Prove que é expert em futebol, aposte e vença!</p>
-                        <p><a class="btn btn-primary btn-lg">Comece já!</a></p>
+                        <h1>Bem vindo ao Bolão Web</h1> 
+                        <h1> #{loginBEAN.usuario}</h1>
                     </b:jumbotron>
                 </b:container>
             </ui:define>

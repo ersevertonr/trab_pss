@@ -13,11 +13,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
-@RequestScoped
+@SessionScoped
 public class LoginBEAN {
 
     private Apostador apostador = new Apostador();
@@ -31,11 +33,12 @@ public class LoginBEAN {
     
     public String usuario;
     public String senha;
-
+   
+    
     public LoginBEAN() {
         setUsuario("");
         setSenha("");
-
+        FacesContext facesContext = FacesContext.getCurrentInstance();
         listaApostador = apostadorDAO.getLista("");
         listaOperador = operadorDAO.getLista("");
 
@@ -73,7 +76,7 @@ public class LoginBEAN {
             operadorDAO.inserirOperador(operadorTemp);
         }
     }
-
+    
     public String getUsuario() {
         return usuario;
     }
@@ -94,7 +97,10 @@ public class LoginBEAN {
         for (Apostador apos : listaApostador) {
             if (apos.getNome().equals(usuario) && apos.getSenha().equals(senha)) {
                 apostador = apos;
-                return "indexUsuario";
+            HttpSession session = ( HttpSession ) 
+                    FacesContext.getCurrentInstance().getExternalContext().getSession( true );  
+            session.setAttribute( "apostador", apostador );    
+            return "indexUsuario";
             } 
         }
 
