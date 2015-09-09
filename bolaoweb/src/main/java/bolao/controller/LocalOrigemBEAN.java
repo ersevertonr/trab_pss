@@ -79,6 +79,10 @@ public class LocalOrigemBEAN {
     return this.listaOrigem;
   }
 
+  public List buscaLocalOrigem(String filtro) {
+    listaOrigem = origemDAO.getLista(filtro);
+    return this.listaOrigem;
+  }
   public String carregaLocalOrigem(LocalOrigem o) {
     origem = o;
     return "cadastro_localOrigem";

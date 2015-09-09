@@ -7,6 +7,8 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 
 
 public class LocalOrigemDAO {
@@ -17,13 +19,24 @@ public class LocalOrigemDAO {
 
   public List<LocalOrigem> getList() {
     session = HibernateUtil.getSessionFactory().openSession();
-
     Criteria criteria = session.createCriteria(LocalOrigem.class);
     this.listaLocalOrigem = criteria.list();
 
     return this.listaLocalOrigem;
   }
 
+  public List<LocalOrigem> getLista( String filtro ){
+        session = HibernateUtil.getSessionFactory().openSession();
+
+        Criteria crit = session.createCriteria(LocalOrigem.class);
+
+        Criterion filtroNome = Restrictions.like("Id",filtro+"%");
+
+        crit.add(filtroNome);
+
+        this.listaLocalOrigem = crit.list();
+        return listaLocalOrigem;
+    }
   public void incluirLocalOrigem(LocalOrigem origem) {
     try {
       session = HibernateUtil.getSessionFactory().openSession();
@@ -65,4 +78,5 @@ public class LocalOrigemDAO {
       ex.printStackTrace();
     }
   }
+  
 }

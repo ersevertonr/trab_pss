@@ -36,12 +36,14 @@
             <br/>
             <b:row>
               <b:column span="1">
-                <h:outputLabel value="Id.Origem:"/>
+                <h:outputLabel value="Local de Origem:"/>
               </b:column>
               <b:column span="5">
-                <h:inputText id="idLocalOrigem" disabled="false" value="#{timesBEAN.equipe.idLocalTime}" required="true" requiredMessage=" *Origem da equipe é obrigatória">
-                  <f:validateLongRange minimum="0" maximum="99999999"/>
-                </h:inputText>
+                  <h:selectOneMenu id="idLocalOrigem" value="#{timesBEAN.equipe.idLocalTime}" converter="bolaoweb.util.localOrigemConverter"
+                                                 required="true" requiredMessage="Local de Origem  é obrigatório!">
+                      <f:selectItems value="#{localOrigemBEAN.listarLocalOrigem()}" var="localOrigem"
+                                     itemValue="#{listaOrigem}" itemLabel="#{localOrigem.cidade}"></f:selectItems>
+                </h:selectOneMenu>
                 <h:message for="idLocalOrigem" errorClass="erros"/>
               </b:column>
             </b:row>
@@ -51,7 +53,7 @@
                 <h:outputLabel value="Nome:"/>
               </b:column>
               <b:column span="5">
-                <h:inputText id="nome" disabled="false" value="#{timesBEAN.equipe.nome}" required="true" requiredMessage=" *Nome da equipe é obrigatório" pt:placeholder="Boca Juniors"/>
+                <h:inputText id="nome" disabled="false" value="#{timesBEAN.equipe.nome}" required="true" requiredMessage=" *Nome da equipe é obrigatório" />
                 <h:message for="nome" errorClass="erros"/>
               </b:column>
             </b:row>

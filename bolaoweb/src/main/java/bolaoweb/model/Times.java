@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -20,8 +21,8 @@ public class Times implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
-  @Column
-  private Long IdLocalTime;
+  @OneToOne
+  private LocalOrigem IdLocalTime;
 
   @Column
   private String Tipo;
@@ -37,11 +38,11 @@ public class Times implements Serializable {
     this.Id = Id;
   }
 
-  public Long getIdLocalTime() {
+  public LocalOrigem getIdLocalTime() {
     return IdLocalTime;
   }
 
-  public void setIdLocalTime(Long IdLocalTime) {
+  public void setIdLocalTime(LocalOrigem IdLocalTime) {
     this.IdLocalTime = IdLocalTime;
   }
 

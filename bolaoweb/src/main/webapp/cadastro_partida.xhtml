@@ -79,14 +79,14 @@
                                                    itemValue="#{campeonatoLista}" itemLabel="#{campeonatoLista.nome}"></f:selectItems>
                                 </h:selectOneMenu>
                             </b:column>
-                            <b:column span="4"><h:message for="timeCasa" style="color: red;" /></b:column>
+                            <b:column span="4"><h:message for="campeonato" style="color: red;" /></b:column>
                         </b:row>
                         <br/>
                         <b:row>
                             <b:column span="2"><h:commandButton value="Confirmar" action="#{partidasBEAN.salvarPartida()}" 
                                                                 styleClass="btn btn-primary input"
                                                                 id="botaoConfirmar"/></b:column>
-                            <b:column span="2"><h:commandButton value="Voltar" action="consulta_partida" styleClass="btn input"/> <br/><br/></b:column>                            
+                            <b:column span="2"><h:commandButton value="Voltar" immediate="true" action="consulta_partida" styleClass="btn input"/> <br/><br/></b:column>                            
                         </b:row>
                     </b:container>                    
                 </h:form>

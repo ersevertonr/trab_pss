@@ -77,7 +77,10 @@ public class CampeonatoBEAN {
         listaCampeonato = campeonatoDAO.getLista(filtro);
         return this.listaCampeonato;
     }
-
+     public List listaCampeonato(){
+        listaCampeonato = campeonatoDAO.getList();
+        return this.listaCampeonato;
+    }
     public String carregaCampeonato(Campeonato c){
         campeonato = c;
         return "cadastro_campeonato";

@@ -52,30 +52,6 @@ public class PartidasBEAN {
     }
     
     public String salvarPartida(){
-        
-        //validações
-        /*if(partidas.getData()==null){
-            return "Data inválida";
-        } else if (partidas.getData().compareTo(new Date(System.currentTimeMillis()))>0){// se for maior que zero é no futuro, portanto, não pode ter placar
-            if(partidas.getGolsTimeCasa()>0 || partidas.getGolsTimeVisitante()>0){
-                return "Partida ainda não realizada não pode possuir placar atribuído.";
-            } 
-        } else if (partidas.getData().compareTo(new Date(System.currentTimeMillis()))<0){ // se for menor que zero é no passado, portanto, placar é obrigatorio
-            if(partidas.getGolsTimeCasa()==0 && partidas.getGolsTimeVisitante()==0){
-                return "Placar é obrigatório para partidas já realizadas";
-            }
-        }
-        if(partidas.getTimeCasa().getId()==null){
-            return "Time da casa informado não existe";
-        }
-        if(partidas.getTimeVisitante().getId()==null){
-            return "Time visitante informado não existe";
-        }
-        if(partidas.getGolsTimeCasa()<0 || partidas.getGolsTimeVisitante()<0){
-            return "Placar não pode conter valores negativos";
-        }*/
-        
-        
         if(flagEditar){
             partidasDAO.updatePartida(partidas);
             flagEditar = false;
@@ -100,11 +76,6 @@ public class PartidasBEAN {
     }
         
     public String novaPartida(){
-        /*this.partidas.setData(null);
-        this.partidas.setGolsTimeCasa(0);
-        this.partidas.setGolsTimeVisitante(0);
-        this.partidas.setTimeCasa(null);
-        this.partidas.setTimeVisitante(null);*/
         this.partidas = new Partidas();
         return "cadastro_partida";
     }
