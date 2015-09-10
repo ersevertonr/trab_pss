@@ -41,11 +41,11 @@
                         <br/>
                         <br/><br/>
                         <b:row>
-                            <b:column span="2"><h:outputLabel value="Pesquisar Partida:"/></b:column>
-                            <b:column span="2"><h:selectOneMenu value="#{partidasBEAN.tipoFiltro}">
-                                    <f:selectItem itemValue="dataPartida" itemLabel="Data partida"/>
-                                    <f:selectItem itemValue="nomeTimeCasa" itemLabel="Nome time casa"/>
-                                    <f:selectItem itemValue="nomeTimeVisitante" itemLabel="Nome time visitante"/>
+                            <b:column span="2"><h:outputLabel value="Pesquisar Palpite:"/></b:column>
+                            <b:column span="2"><h:selectOneMenu value="#{palpiteBEAN.tipoFiltro}">
+                                    <f:selectItem itemValue="dataPartida" itemLabel="Data palpite"/>
+                                    <f:selectItem itemValue="nomeTimeCasa" itemLabel="Nome Time Casa"/>
+                                    <f:selectItem itemValue="nomeTimeVisitante" itemLabel="Nome Time Visitante"/>
                             </h:selectOneMenu></b:column>
                             <b:column span="7"><h:inputText id="filtro" value="#{partidasBEAN.filtro}" styleClass="input"/></b:column>
                             <b:column span="1"><h:commandButton action="#{partidasBEAN.filtrarPartidas()}" value="Buscar" styleClass="input"/></b:column>                            

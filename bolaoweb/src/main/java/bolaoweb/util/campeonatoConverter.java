@@ -3,6 +3,7 @@ package bolaoweb.util;
 
 import bolaoweb.model.Campeonato;
 import bolaoweb.modelDAO.CampeonatoDAO;
+import java.util.Iterator;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
@@ -20,7 +21,8 @@ public class campeonatoConverter implements Converter{
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String nome) {
-        for (Campeonato listaCampeonato : listaCampeonato) {
+        for (Iterator<Campeonato> it = listaCampeonato.iterator(); it.hasNext();) {
+            Campeonato listaCampeonato = it.next();
             if (listaCampeonato.getNome().equals(nome)) {
                 return listaCampeonato;
             }

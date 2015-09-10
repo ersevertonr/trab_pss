@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -27,8 +28,8 @@ public class Palpite implements Serializable {
   @Column
   private Long IdApostador;
 
-  @Column
-  private Long IdPartida;
+  @OneToOne
+  private Partidas Partida;
 
   @Column
   @Temporal(value = TemporalType.DATE)
@@ -39,6 +40,9 @@ public class Palpite implements Serializable {
 
   @Column
   private Integer GolsVisitante;
+  
+  @Column
+  private Integer pontuacao;
 
   public Long getId() {
     return Id;
@@ -56,12 +60,12 @@ public class Palpite implements Serializable {
     this.IdApostador = IdApostador;
   }
 
-  public Long getIdPartida() {
-    return IdPartida;
+  public Partidas getIdPartida() {
+    return Partida;
   }
 
-  public void setIdPartida(Long IdPartida) {
-    this.IdPartida = IdPartida;
+  public void setIdPartida(Partidas IdPartida) {
+    this.Partida = IdPartida;
   }
 
   public Date getDataCadastro() {
@@ -88,12 +92,20 @@ public class Palpite implements Serializable {
     this.GolsVisitante = GolsVisitante;
   }
 
+    public Integer getPontuacao() {
+        return pontuacao;
+    }
+
+    public void setPontuacao(Integer pontuacao) {
+        this.pontuacao = pontuacao;
+    }
+
   @Override
   public int hashCode() {
     int hash = 5;
     hash = 19 * hash + Objects.hashCode(this.Id);
     hash = 19 * hash + Objects.hashCode(this.IdApostador);
-    hash = 19 * hash + Objects.hashCode(this.IdPartida);
+    hash = 19 * hash + Objects.hashCode(this.Partida);
     return hash;
   }
 
@@ -112,7 +124,7 @@ public class Palpite implements Serializable {
     if (!Objects.equals(this.IdApostador, other.IdApostador)) {
       return false;
     }
-    if (!Objects.equals(this.IdPartida, other.IdPartida)) {
+    if (!Objects.equals(this.Partida, other.Partida)) {
       return false;
     }
     return true;

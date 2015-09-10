@@ -27,7 +27,6 @@ public class Partidas implements Serializable{
     private Date dataPartida;
     private int golsTimeCasa;
     private int golsTimeVisitante;
-    private int pontuacaoPartida;
     @OneToOne
     private Campeonato campeonato;
     
@@ -88,14 +87,7 @@ public class Partidas implements Serializable{
         this.dataPartida = dataPartida;
     }
 
-    public int getPontuacaoPartida() {
-        return pontuacaoPartida;
-    }
-
-    public void setPontuacaoPartida(int pontuacaoPartida) {
-        this.pontuacaoPartida = pontuacaoPartida;
-    }
-
+    
     public Campeonato getCampeonato() {
         return campeonato;
     }

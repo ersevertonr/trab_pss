@@ -37,13 +37,13 @@
                 </style>
                 <h:form>
                     <b:container>
-                        <h1><b>Consulta de Partidas</b></h1> 
+                        <h1><b>Consulta de Pontuação</b></h1> 
                         <br/>
-                        <h:commandButton value="+ Nova Partida" action="#{partidasBEAN.novaPartida()}" styleClass="btn btn-primary"/> <br/><br/>
+                         <br/><br/>
                         <b:row>
-                            <b:column span="2"><h:outputLabel value="Pesquisar Partida:"/></b:column>
-                            <b:column span="2"><h:selectOneMenu value="#{partidasBEAN.tipoFiltro}">
-                                    <f:selectItem itemValue="dataPartida" itemLabel="Data partida"/>
+                            <b:column span="2"><h:outputLabel value="Pesquisar Palpite:"/></b:column>
+                            <b:column span="2"><h:selectOneMenu value="#{palpiteBEAN.listaPalpite}">
+                                    <f:selectItem itemValue="dataPartida" itemLabel="Data palpite"/>
                                     <f:selectItem itemValue="nomeTimeCasa" itemLabel="Nome time casa"/>
                                     <f:selectItem itemValue="nomeTimeVisitante" itemLabel="Nome time visitante"/>
                             </h:selectOneMenu></b:column>
@@ -107,9 +107,9 @@
                                 </f:facet>
                                 <b:row>
                                     <b:column span="1"></b:column>
-                                    <b:column span="4"><h:commandButton value="Editar" action="#{partidasBEAN.carregarPartida(tabela)}" styleClass="input"/></b:column>
+                                    <b:column span="4"><h:commandButton value="Gerar Pontuação" action="#{partidasBEAN.carregarPartida(tabela)}" styleClass="input"/></b:column>
                                     <b:column span="1"></b:column>
-                                    <b:column span="4"><h:commandButton value="Remover" action="#{partidasBEAN.deletePartida(tabela)}" styleClass="input"/></b:column>
+                                    <b:column span="4"><h:commandButton value="Editar Pontuação" action="#{partidasBEAN.deletePartida(tabela)}" styleClass="input"/></b:column>
                                 </b:row>
                             </h:column>
                         </h:dataTable>  
