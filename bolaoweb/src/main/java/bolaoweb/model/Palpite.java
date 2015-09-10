@@ -1,7 +1,6 @@
 package bolaoweb.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -26,10 +25,11 @@ public class Palpite implements Serializable {
   private Long Id;
 
   @Column
-  private Long IdApostador;
+  @OneToOne
+  private Apostador Apostador;
 
   @OneToOne
-  private Partidas Partida;
+  private Long idPartida;
 
   @Column
   @Temporal(value = TemporalType.DATE)
@@ -52,20 +52,20 @@ public class Palpite implements Serializable {
     this.Id = Id;
   }
 
-  public Long getIdApostador() {
-    return IdApostador;
+  public Apostador getIdApostador() {
+    return Apostador;
   }
 
-  public void setIdApostador(Long IdApostador) {
-    this.IdApostador = IdApostador;
+  public void setIdApostador(Apostador IdApostador) {
+    this.Apostador = IdApostador;
   }
 
-  public Partidas getIdPartida() {
-    return Partida;
+  public Long getPartida() {
+    return idPartida;
   }
 
-  public void setIdPartida(Partidas IdPartida) {
-    this.Partida = IdPartida;
+  public void setPartida(Long IdPartida) {
+    this.idPartida = IdPartida;
   }
 
   public Date getDataCadastro() {
@@ -104,8 +104,8 @@ public class Palpite implements Serializable {
   public int hashCode() {
     int hash = 5;
     hash = 19 * hash + Objects.hashCode(this.Id);
-    hash = 19 * hash + Objects.hashCode(this.IdApostador);
-    hash = 19 * hash + Objects.hashCode(this.Partida);
+    hash = 19 * hash + Objects.hashCode(this.Apostador);
+    hash = 19 * hash + Objects.hashCode(this.idPartida);
     return hash;
   }
 
@@ -121,10 +121,10 @@ public class Palpite implements Serializable {
     if (!Objects.equals(this.Id, other.Id)) {
       return false;
     }
-    if (!Objects.equals(this.IdApostador, other.IdApostador)) {
+    if (!Objects.equals(this.Apostador, other.Apostador)) {
       return false;
     }
-    if (!Objects.equals(this.Partida, other.Partida)) {
+    if (!Objects.equals(this.idPartida, other.idPartida)) {
       return false;
     }
     return true;

@@ -29,6 +29,14 @@ public class PalpiteDAO {
     public void setTipoFiltro(String tipoFiltro) {
         this.tipoFiltro = tipoFiltro;
     }
+
+    public String getFiltro() {
+        return filtro;
+    }
+
+    public void setFiltro(String filtro) {
+        this.filtro = filtro;
+    }
     
   public List<Palpite> getList() throws ParseException {
       session = HibernateUtil.getSessionFactory().openSession();
@@ -43,8 +51,8 @@ public class PalpiteDAO {
             Date dataAux = (Date) formater.parse(filtro);
             criteria.add(Restrictions.eq("dataCadastro", dataAux));
         } else if (tipoFiltro.equalsIgnoreCase("apostador")){
-            criteria.createAlias("palpite.timeCasa", "apostador");
-            criteria.add(Restrictions.like("timeCasa.Nome", filtro+"%"));
+            criteria.createAlias("palpite.Apostador", "apostador");
+            criteria.add(Restrictions.like("palpite.Apostador.nome", filtro+"%"));
         } 
         criteria.addOrder(Order.asc("dataPartida"));
         this.listaPalpite = criteria.list();

@@ -16,7 +16,7 @@ public class Apostador extends Usuario{
     private String apelido;
     @Temporal(TemporalType.DATE)
     private Date datanascimento;
-
+    private int pontuacao;
     public String getApelido() {
         return apelido;
     }
@@ -31,6 +31,14 @@ public class Apostador extends Usuario{
 
     public void setDatanascimento(Date datanascimento) {
         this.datanascimento = datanascimento;
+    }
+
+    public int getPontuacao() {
+        return pontuacao;
+    }
+
+    public void setPontuacao(int pontuacao) {
+        this.pontuacao = pontuacao;
     }
     
 }

@@ -50,7 +50,7 @@
                 <h:outputLabel value="Id.Partida:"/>
               </b:column>    
               <b:column span="5">
-                <h:inputText id="idPartida" disabled="false" value="#{palpiteBEAN.palpite.idPartida}" required="true" requiredMessage=" *ID da partida é obrigatório">
+                <h:inputText id="idPartida" disabled="false" value="#{palpiteBEAN.palpite.partida}" required="true" requiredMessage=" *ID da partida é obrigatório">
                   <f:validateLongRange minimum="0" maximum="999"/>
                 </h:inputText>
                 <h:message for="idPartida" errorClass="erros"/>

@@ -48,7 +48,7 @@ public class PalpiteBEAN {
     palpite.setGolsCasa(null);
     palpite.setGolsVisitante(null);
     palpite.setIdApostador(null);
-    palpite.setIdPartida(null);
+    palpite.setPartida(null);
     return "consulta_palpite";
   }
 
@@ -92,7 +92,7 @@ public class PalpiteBEAN {
   public String novoPalpite() {
     palpite.setId(null);
     palpite.setIdApostador(null);
-    palpite.setIdPartida(null);
+    palpite.setPartida(null);
     palpite.setGolsCasa(null);
     palpite.setGolsVisitante(null);
     palpite.setDataCadastro(Calendar.getInstance().getTime());
