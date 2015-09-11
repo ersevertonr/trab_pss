@@ -39,14 +39,14 @@
           <b:container>
             <h1><b>Meus Palpites</b></h1>
             <br/><br/>
-            <h:commandButton value="+ Novo Palpite" action="#{palpiteBEAN.novoPalpite()}" styleClass="btn btn-primary"/> <br/><br/>
-            <h:dataTable value="#{palpiteBEAN.listaPalpite()}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
+            <br/><br/>
+            <h:dataTable value="#{palpiteBEAN.listPalpite(loginBEAN.usuario)}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
                        
               <h:column>
                 <f:facet name="header">
-                  ID Partida
+                  Partida
                 </f:facet>
-                <h:outputText value="#{tabela.idPartida}"/>
+                <h:outputText value="#{tabela.partida.confronto}"/>
               </h:column>
               <h:column>
                 <f:facet name="header">

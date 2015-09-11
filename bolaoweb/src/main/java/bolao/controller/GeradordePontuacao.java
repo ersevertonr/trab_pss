@@ -14,7 +14,7 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class GeradordePontuacao {
-    private Partidas partida;
+  /*  private Partidas partida;
     private Palpite palpite;
     private List <Palpite> listaPalpite;
     private List <Partidas> listaPartida;
@@ -32,8 +32,8 @@ public class GeradordePontuacao {
         palpiteDAO.setFiltro(filtro);
         listaPalpite = palpiteDAO.getList();
         
-     
+     */
         
     }
     
-}
+

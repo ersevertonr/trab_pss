@@ -28,7 +28,8 @@ public class Partidas implements Serializable{
     private int golsTimeVisitante;
     @OneToOne
     private Campeonato campeonato;
-    private boolean flag = true;
+    private boolean flag = false;
+    private String confronto;
     
 
     public int getId() {
@@ -109,6 +110,14 @@ public class Partidas implements Serializable{
 
     public boolean Flag() {
         return flag;
+    }
+
+    public String getConfronto() {
+        return confronto;
+    }
+
+    public void setConfronto(String confronto) {
+        this.confronto = confronto;
     }
 
     

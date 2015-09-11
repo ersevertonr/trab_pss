@@ -107,7 +107,7 @@
                                 </f:facet>
                                 <b:row>
                                     <b:column span="1"></b:column>
-                                    <b:column span="4"><h:commandButton value="Palpitar" action="#{palpiteBEAN.carregaPalpite(p)}" styleClass="input"/></b:column>
+                                    <b:column span="8"><h:commandButton value="Palpitar" action="#{palpiteBEAN.carregaPalpite(p)}" styleClass="input"/></b:column>
                                     <b:column span="1"></b:column>
                                     
                                 </b:row>
@@ -115,6 +115,10 @@
                         </h:dataTable>  
                     </b:container>
                 </h:form>
+                <BR></BR>
+                <center>
+                <h:link outcome="indexUsuario" value="Retornar ao Menu Inicial" styleClass="btn btn-primary"/>
+                </center>
             </ui:define>
         </ui:composition>
     </h:body>

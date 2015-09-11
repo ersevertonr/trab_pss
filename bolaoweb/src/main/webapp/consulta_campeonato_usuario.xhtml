@@ -99,28 +99,14 @@
                                 </f:facet>
                                 <h:outputText value="#{tabela.observacao}"/>
                             </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    Ações
-                                </f:facet>
-                                <b:row>
-                                    <b:column span="1">                                        
-                                    </b:column>
-                                    <b:column span="4">
-                                        <h:commandButton value="Editar" action="#{campeonatoBEAN.carregaCampeonato(tabela)}" styleClass="input"/>
-                                    </b:column>
-                                    <b:column span="1">                                        
-                                    </b:column>
-                                    <b:column span="4">
-                                        <h:commandButton value="Remover" action="#{campeonatoBEAN.excluirCampeonato(tabela)}" styleClass="input"/>
-                                    </b:column>
-                                    <b:column span="1">                                        
-                                    </b:column>
-                                </b:row>
-                            </h:column>
+                            
                         </h:dataTable>  
                     </b:container>
                 </h:form>
+                <BR></BR>
+                <center>
+                <h:link outcome="indexUsuario" value="Retornar ao Menu Inicial" styleClass="btn btn-primary"/>
+                </center>
             </ui:define>
         </ui:composition>
     </h:body>

@@ -41,7 +41,10 @@ public class PalpiteBEAN {
     listaPalpite = palpiteDAO.getLista();
     return listaPalpite;
   }
-
+  public List listPalpite(String filtro){
+      listaPalpite = palpiteDAO.getList(filtro);
+      return listaPalpite;
+  }
   public String incluirPalpite() {
     palpiteDAO.incluirPalpite(palpite);
     palpite.setDataCadastro(Calendar.getInstance().getTime());

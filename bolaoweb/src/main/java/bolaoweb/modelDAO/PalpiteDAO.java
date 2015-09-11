@@ -11,6 +11,7 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
@@ -20,15 +21,9 @@ public class PalpiteDAO {
   private Session session;
   private Transaction trans;
   private List<Palpite> listaPalpite;
-  private String tipoFiltro = "", filtro = "";
+  private String filtro = "";
   
-  public String getTipoFiltro() {
-        return tipoFiltro;
-    }
-
-    public void setTipoFiltro(String tipoFiltro) {
-        this.tipoFiltro = tipoFiltro;
-    }
+  
 
     public String getFiltro() {
         return filtro;
@@ -38,23 +33,12 @@ public class PalpiteDAO {
         this.filtro = filtro;
     }
     
-  public List<Palpite> getList() throws ParseException {
+  public List<Palpite> getList(String filtro) {
       session = HibernateUtil.getSessionFactory().openSession();
       trans = session.beginTransaction();
-        
         Criteria criteria = session.createCriteria(Palpite.class, "palpite");
-        
-        if (tipoFiltro.equalsIgnoreCase("") || filtro.equalsIgnoreCase("")){
-            criteria = session.createCriteria(Palpite.class, "palpite");
-        } else if (tipoFiltro.equalsIgnoreCase("dataCadastro")){
-            SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
-            Date dataAux = (Date) formater.parse(filtro);
-            criteria.add(Restrictions.eq("dataCadastro", dataAux));
-        } else if (tipoFiltro.equalsIgnoreCase("apostador")){
-            criteria.createAlias("palpite.Apostador", "apostador");
-            criteria.add(Restrictions.like("palpite.Apostador.nome", filtro+"%"));
-        } 
-        criteria.addOrder(Order.asc("dataPartida"));
+        criteria.createAlias("palpite.apostador", "apostador");
+        criteria.add(Restrictions.like("apostador.nome", filtro+"%"));
         this.listaPalpite = criteria.list();
         
         session.close();

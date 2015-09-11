@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -24,11 +25,11 @@ public class Palpite implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
-  @Column
-  private Long idApostador;
+  @ManyToOne
+  private Apostador Apostador;
 
- 
-  private Long idPartida;
+  @OneToOne
+  private Partidas Partida;
 
   @Column
   @Temporal(value = TemporalType.DATE)
@@ -40,8 +41,7 @@ public class Palpite implements Serializable {
   @Column
   private Integer GolsVisitante;
   
-  @Column
-  private Integer pontuacao;
+  
 
   public Long getId() {
     return Id;
@@ -51,20 +51,20 @@ public class Palpite implements Serializable {
     this.Id = Id;
   }
 
-  public Long getIdApostador() {
-    return idApostador;
+  public Apostador getApostador() {
+    return Apostador;
   }
 
-  public void setIdApostador(Long IdApostador) {
-    this.idApostador = IdApostador;
+  public void setIdApostador(Apostador Apostador) {
+    this.Apostador = Apostador;
   }
 
-  public Long getPartida() {
-    return idPartida;
+  public Partidas getPartida() {
+    return Partida;
   }
 
-  public void setPartida(Long IdPartida) {
-    this.idPartida = IdPartida;
+  public void setPartida(Partidas IdPartida) {
+    this.Partida = IdPartida;
   }
 
   public Date getDataCadastro() {
@@ -91,20 +91,14 @@ public class Palpite implements Serializable {
     this.GolsVisitante = GolsVisitante;
   }
 
-    public Integer getPontuacao() {
-        return pontuacao;
-    }
-
-    public void setPontuacao(Integer pontuacao) {
-        this.pontuacao = pontuacao;
-    }
+   
 
   @Override
   public int hashCode() {
     int hash = 5;
     hash = 19 * hash + Objects.hashCode(this.Id);
-    hash = 19 * hash + Objects.hashCode(this.idApostador);
-    hash = 19 * hash + Objects.hashCode(this.idPartida);
+    
+   
     return hash;
   }
 
@@ -120,10 +114,10 @@ public class Palpite implements Serializable {
     if (!Objects.equals(this.Id, other.Id)) {
       return false;
     }
-    if (!Objects.equals(this.idApostador, other.idApostador)) {
+    if (!Objects.equals(this.Apostador, other.Apostador)) {
       return false;
     }
-    if (!Objects.equals(this.idPartida, other.idPartida)) {
+    if (!Objects.equals(this.Partida, other.Partida)) {
       return false;
     }
     return true;
