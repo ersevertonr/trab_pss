@@ -41,18 +41,7 @@
             <br/><br/>
             <h:commandButton value="+ Novo Palpite" action="#{palpiteBEAN.novoPalpite()}" styleClass="btn btn-primary"/> <br/><br/>
             <h:dataTable value="#{palpiteBEAN.listaPalpite()}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
-              <h:column>
-                <f:facet name="header">
-                  ID
-                </f:facet>
-                <h:outputText value="#{tabela.id}"/>
-              </h:column>
-              <h:column>
-                <f:facet name="header">
-                  ID Apostador
-                </f:facet>
-                <h:outputText value="#{tabela.idApostador}"/>
-              </h:column>
+                       
               <h:column>
                 <f:facet name="header">
                   ID Partida

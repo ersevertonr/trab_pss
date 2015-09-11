@@ -74,14 +74,15 @@ public class PartidasDAO {
         return lista;
     }
     
-    /*public List<Partidas> getLista() {
+    public List<Partidas> getList() {
         sessao = HibernateUtil.getSessionFactory().openSession();
         transacao = sessao.beginTransaction();        
-        Criteria criteria = sessao.createCriteria(Partidas.class);
+        Criteria criteria = sessao.createCriteria(Partidas.class,"partida");
+        criteria.add(Restrictions.eqOrIsNull("partida.flag",false));
         this.lista = criteria.list();
         sessao.close();
         return lista;
-    }*/
+    }
     
     public void insertPartida(Partidas p){
         try {

@@ -15,8 +15,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import javax.servlet.http.HttpSession;
 
 @ManagedBean
 @SessionScoped
@@ -29,7 +27,7 @@ public class LoginBEAN {
     private Operador operador = new Operador();
     private OperadorDAO operadorDAO = new OperadorDAO();
     private List<Operador> listaOperador;
-    private FacesMessage message;
+    
     
     public String usuario;
     public String senha;
@@ -38,7 +36,7 @@ public class LoginBEAN {
     public LoginBEAN() {
         setUsuario("");
         setSenha("");
-        FacesContext facesContext = FacesContext.getCurrentInstance();
+        
         listaApostador = apostadorDAO.getLista("");
         listaOperador = operadorDAO.getLista("");
 
@@ -60,7 +58,8 @@ public class LoginBEAN {
         apostadorTemp.setApelido("Teste");
         apostadorTemp.setEmail("marcelo@teste.com.br");
         apostadorTemp.setSenha("Pinheiro");
-        
+        apostadorTemp.setPontuacao(0);
+       
         if (listaApostador.isEmpty()){
             apostadorDAO.inserirApostador(apostadorTemp);
         }
@@ -97,10 +96,7 @@ public class LoginBEAN {
         for (Apostador apos : listaApostador) {
             if (apos.getNome().equals(usuario) && apos.getSenha().equals(senha)) {
                 apostador = apos;
-            HttpSession session = ( HttpSession ) 
-                    FacesContext.getCurrentInstance().getExternalContext().getSession( true );  
-            session.setAttribute( "apostador", apostador );    
-            return "indexUsuario";
+                return "indexUsuario";
             } 
         }
 

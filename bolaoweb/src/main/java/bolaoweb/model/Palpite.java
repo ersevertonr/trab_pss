@@ -25,10 +25,9 @@ public class Palpite implements Serializable {
   private Long Id;
 
   @Column
-  @OneToOne
-  private Apostador Apostador;
+  private Long idApostador;
 
-  @OneToOne
+ 
   private Long idPartida;
 
   @Column
@@ -52,12 +51,12 @@ public class Palpite implements Serializable {
     this.Id = Id;
   }
 
-  public Apostador getIdApostador() {
-    return Apostador;
+  public Long getIdApostador() {
+    return idApostador;
   }
 
-  public void setIdApostador(Apostador IdApostador) {
-    this.Apostador = IdApostador;
+  public void setIdApostador(Long IdApostador) {
+    this.idApostador = IdApostador;
   }
 
   public Long getPartida() {
@@ -104,7 +103,7 @@ public class Palpite implements Serializable {
   public int hashCode() {
     int hash = 5;
     hash = 19 * hash + Objects.hashCode(this.Id);
-    hash = 19 * hash + Objects.hashCode(this.Apostador);
+    hash = 19 * hash + Objects.hashCode(this.idApostador);
     hash = 19 * hash + Objects.hashCode(this.idPartida);
     return hash;
   }
@@ -121,7 +120,7 @@ public class Palpite implements Serializable {
     if (!Objects.equals(this.Id, other.Id)) {
       return false;
     }
-    if (!Objects.equals(this.Apostador, other.Apostador)) {
+    if (!Objects.equals(this.idApostador, other.idApostador)) {
       return false;
     }
     if (!Objects.equals(this.idPartida, other.idPartida)) {

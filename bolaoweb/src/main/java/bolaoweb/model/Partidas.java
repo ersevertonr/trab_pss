@@ -2,7 +2,6 @@ package bolaoweb.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,6 +28,7 @@ public class Partidas implements Serializable{
     private int golsTimeVisitante;
     @OneToOne
     private Campeonato campeonato;
+    private boolean flag = true;
     
 
     public int getId() {
@@ -94,6 +94,21 @@ public class Partidas implements Serializable{
 
     public void setCampeonato(Campeonato campeonato) {
         this.campeonato = campeonato;
+    }
+
+    public String isFlag() {
+        String aux = null;
+        if (flag == true){ aux = "Gerado";}
+        else if(false == flag) {aux = "Não Gerado";}
+        return aux;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public boolean Flag() {
+        return flag;
     }
 
     

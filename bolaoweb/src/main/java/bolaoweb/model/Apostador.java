@@ -1,6 +1,7 @@
 package bolaoweb.model;
 
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
@@ -16,7 +17,8 @@ public class Apostador extends Usuario{
     private String apelido;
     @Temporal(TemporalType.DATE)
     private Date datanascimento;
-    private int pontuacao;
+    @Column
+    private int Pontuacao;
     public String getApelido() {
         return apelido;
     }
@@ -34,11 +36,13 @@ public class Apostador extends Usuario{
     }
 
     public int getPontuacao() {
-        return pontuacao;
+        return Pontuacao;
     }
 
-    public void setPontuacao(int pontuacao) {
-        this.pontuacao = pontuacao;
+    public void setPontuacao(int Pontuacao) {
+        this.Pontuacao = Pontuacao;
     }
+
+    
     
 }

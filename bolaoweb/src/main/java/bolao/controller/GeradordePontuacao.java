@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bolao.controller;
 
 import bolaoweb.model.Palpite;
@@ -12,11 +8,11 @@ import bolaoweb.modelDAO.PartidasDAO;
 import java.text.ParseException;
 import java.util.Iterator;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
-/**
- *
- * @author Usuario
- */
+@ManagedBean
+@SessionScoped
 public class GeradordePontuacao {
     private Partidas partida;
     private Palpite palpite;

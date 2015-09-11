@@ -38,7 +38,11 @@ public class PartidasBEAN {
 
     public PartidasBEAN() {
     }
+    public List <Partidas> consultaPartidasPontuacao() throws ParseException{
+    listaPartidas = partidasDAO.getList();
+        return this.listaPartidas;
     
+    }
     public List<Partidas> consultarPartidas() throws ParseException{
         listaPartidas = partidasDAO.getLista();
         return this.listaPartidas;
