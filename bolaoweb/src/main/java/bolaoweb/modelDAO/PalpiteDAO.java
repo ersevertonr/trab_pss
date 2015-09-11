@@ -37,7 +37,7 @@ public class PalpiteDAO {
       session = HibernateUtil.getSessionFactory().openSession();
       trans = session.beginTransaction();
         Criteria criteria = session.createCriteria(Palpite.class, "palpite");
-        criteria.createAlias("palpite.apostador", "apostador");
+        criteria.createAlias("palpite.Apostador", "apostador");
         criteria.add(Restrictions.like("apostador.nome", filtro+"%"));
         this.listaPalpite = criteria.list();
         

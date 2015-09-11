@@ -1,5 +1,6 @@
 package bolao.controller;
 
+import bolaoweb.model.Apostador;
 import bolaoweb.model.Palpite;
 import bolaoweb.modelDAO.PalpiteDAO;
 import java.util.Calendar;
@@ -7,6 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @ManagedBean
@@ -46,6 +50,13 @@ public class PalpiteBEAN {
       return listaPalpite;
   }
   public String incluirPalpite() {
+    HttpServletRequest req = (HttpServletRequest) 
+    FacesContext.getCurrentInstance().getExternalContext().getRequest(); 
+    HttpServletRequest request = (HttpServletRequest) req;
+    HttpSession session = (HttpSession) request.getSession();
+    Apostador UsuarioSession;
+    UsuarioSession = (Apostador) session.getAttribute("apostador");
+    palpite.setIdApostador(UsuarioSession);
     palpiteDAO.incluirPalpite(palpite);
     palpite.setDataCadastro(Calendar.getInstance().getTime());
     palpite.setGolsCasa(null);

@@ -15,6 +15,8 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 @ManagedBean
 @SessionScoped
@@ -96,6 +98,9 @@ public class LoginBEAN {
         for (Apostador apos : listaApostador) {
             if (apos.getNome().equals(usuario) && apos.getSenha().equals(senha)) {
                 apostador = apos;
+                FacesContext fc = FacesContext.getCurrentInstance();
+                HttpSession session = (HttpSession) fc.getExternalContext().getSession(false);
+                session.setAttribute("apostador", apostador);
                 return "indexUsuario";
             } 
         }
