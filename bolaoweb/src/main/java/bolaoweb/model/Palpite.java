@@ -25,11 +25,11 @@ public class Palpite implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long Id;
 
-  @ManyToOne
+  @OneToOne
   private Apostador Apostador;
 
   @OneToOne
-  private Partidas Partida;
+  private Partidas partida;
 
   @Column
   @Temporal(value = TemporalType.DATE)
@@ -55,16 +55,16 @@ public class Palpite implements Serializable {
     return Apostador;
   }
 
-  public void setIdApostador(Apostador Apostador) {
+  public void setApostador(Apostador Apostador) {
     this.Apostador = Apostador;
   }
 
   public Partidas getPartida() {
-    return Partida;
+    return partida;
   }
 
   public void setPartida(Partidas IdPartida) {
-    this.Partida = IdPartida;
+    this.partida = IdPartida;
   }
 
   public Date getDataCadastro() {
@@ -117,7 +117,7 @@ public class Palpite implements Serializable {
     if (!Objects.equals(this.Apostador, other.Apostador)) {
       return false;
     }
-    if (!Objects.equals(this.Partida, other.Partida)) {
+    if (!Objects.equals(this.partida, other.partida)) {
       return false;
     }
     return true;

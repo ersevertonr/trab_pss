@@ -1,5 +1,5 @@
 package bolao.controller;
-
+import bolaoweb.model.Partidas;
 import bolaoweb.model.Apostador;
 import bolaoweb.model.Palpite;
 import bolaoweb.modelDAO.PalpiteDAO;
@@ -23,6 +23,7 @@ public class PalpiteBEAN {
   public String filtro;
 
   public PalpiteBEAN() {
+     
   }
   
   public void setFiltro(String filtro){
@@ -56,24 +57,21 @@ public class PalpiteBEAN {
     HttpSession session = (HttpSession) request.getSession();
     Apostador UsuarioSession;
     UsuarioSession = (Apostador) session.getAttribute("apostador");
-    palpite.setIdApostador(UsuarioSession);
+    palpite.setApostador(UsuarioSession);
     palpiteDAO.incluirPalpite(palpite);
     palpite.setDataCadastro(Calendar.getInstance().getTime());
-    palpite.setGolsCasa(null);
-    palpite.setGolsVisitante(null);
-    palpite.setIdApostador(null);
-    palpite.setPartida(null);
-    return "consulta_palpite";
+    
+    return "consulta_palpite_usuario";
   }
 
   public String alterarPalpite() {
     palpiteDAO.alterarPalpite(palpite);
-    return "consulta_palpite";
+    return "consulta_palpite_usuario";
   }
 
   public String excluirPalpite(Palpite p) {
     palpiteDAO.excluirPalpite(p);
-    return "consulta_palpite";
+    return "consulta_palpite_usuario";
   }
 
   @Override
@@ -103,10 +101,16 @@ public class PalpiteBEAN {
     return "cadastro_palpite";
   }
 
-  public String novoPalpite() {
+  public String novoPalpite(Partidas partida) {
     palpite.setId(null);
-    palpite.setIdApostador(null);
-    palpite.setPartida(null);
+    HttpServletRequest req = (HttpServletRequest) 
+    FacesContext.getCurrentInstance().getExternalContext().getRequest(); 
+    HttpServletRequest request = (HttpServletRequest) req;
+    HttpSession session = (HttpSession) request.getSession();
+    Apostador UsuarioSession;
+    UsuarioSession = (Apostador) session.getAttribute("apostador");
+    palpite.setApostador(UsuarioSession);
+    palpite.setPartida(partida);
     palpite.setGolsCasa(null);
     palpite.setGolsVisitante(null);
     palpite.setDataCadastro(Calendar.getInstance().getTime());

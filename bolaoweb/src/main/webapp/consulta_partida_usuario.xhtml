@@ -78,23 +78,13 @@
                                 </f:facet>
                                 <h:outputText value="#{tabela.timeCasa.nome}"/>
                             </h:column>
-                            <h:column>
-                                <f:facet name="header">
-                                    Gols Time Casa
-                                </f:facet>
-                                <h:outputText value="#{tabela.golsTimeCasa}"/>
-                            </h:column>
+                            
                             <h:column>
                                 <f:facet name="header">
                                 </f:facet>
                                 <h:outputText value="X"/>
                             </h:column>                            
-                            <h:column>
-                                <f:facet name="header">
-                                    Gols Time Visitante
-                                </f:facet>
-                               <h:outputText value="#{tabela.golsTimeVisitante}"/>
-                            </h:column>
+                            
                             <h:column>
                                 <f:facet name="header">
                                     Time Visitante
@@ -107,7 +97,7 @@
                                 </f:facet>
                                 <b:row>
                                     <b:column span="1"></b:column>
-                                    <b:column span="8"><h:commandButton value="Palpitar" action="#{palpiteBEAN.carregaPalpite(p)}" styleClass="input"/></b:column>
+                                    <b:column span="8"><h:commandButton value="Palpitar" action="#{palpiteBEAN.novoPalpite(tabela)}" styleClass="input"/></b:column>
                                     <b:column span="1"></b:column>
                                     
                                 </b:row>

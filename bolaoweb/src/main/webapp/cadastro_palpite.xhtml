@@ -35,17 +35,7 @@
             <br/>
             
             <br/>
-            <b:row>
-              <b:column span="1">
-                <h:outputLabel value="Id.Partida:"/>
-              </b:column>    
-              <b:column span="5">
-                <h:inputText id="idPartida" disabled="false" value="#{palpiteBEAN.palpite.partida}" required="true" requiredMessage=" *ID da partida é obrigatório">
-                  <f:validateLongRange minimum="0" maximum="999"/>
-                </h:inputText>
-                <h:message for="idPartida" errorClass="erros"/>
-              </b:column>
-            </b:row>
+            
             <br/>
             <b:row>
               <b:column span="1">
@@ -83,10 +73,10 @@
             <br/>
             <b:row>
               <b:column span="2">
-                <h:commandButton value="Confirmar" action="#{palpiteBEAN.confirmaPalpite()}" styleClass="btn btn-primary input"/>
+                  <h:commandButton value="Confirmar" action="#{palpiteBEAN.incluirPalpite()}" styleClass="btn btn-primary input"/>
               </b:column>
               <b:column span="2">
-                <h:link outcome="consulta_palpite" value="Cancelar" styleClass="btn input" style="border-color: tomato"/>
+                <h:link outcome="consulta_partida_usuario" value="Cancelar" styleClass="btn input" style="border-color: tomato"/>
               </b:column>
             </b:row>
             <br/>
@@ -94,7 +84,7 @@
         </h:form>
         <br/>
         <center>
-          <h:link outcome="index" value="Retornar ao Menu Inicial"  styleClass="btn btn-primary"/>
+          <h:link outcome="indexUsuario" value="Retornar ao Menu Inicial"  styleClass="btn btn-primary"/>
         </center>
       </ui:define>
     </ui:composition>

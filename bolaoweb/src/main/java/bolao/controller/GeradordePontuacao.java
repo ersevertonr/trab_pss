@@ -14,26 +14,18 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean
 @SessionScoped
 public class GeradordePontuacao {
-  /*  private Partidas partida;
-    private Palpite palpite;
-    private List <Palpite> listaPalpite;
-    private List <Partidas> listaPartida;
-    private PalpiteBEAN palpiteBEAN;
-    private PartidasBEAN partidaBEAN;
-    private String filtro;
-    private PartidasDAO partidasDAO;
-    private PalpiteDAO palpiteDAO;
+/*  private Partidas partida;
+  private Palpite palpite;
+  private List <Palpite> listaPalpite;
+  private List <Partidas> listaPartida;
+  private PalpiteBEAN palpiteBEAN;
+  private PartidasBEAN partidaBEAN;
+  private PalpiteDAO palpiteDAO;
     
-    public void gerarPontuacao() throws ParseException{
-        partidasDAO.setFiltro(filtro);
-        partidasDAO.setTipoFiltro("dataPartida");
-        listaPartida = partidasDAO.getLista();
-        palpiteDAO.setTipoFiltro("partida");
-        palpiteDAO.setFiltro(filtro);
-        listaPalpite = palpiteDAO.getList();
-        
-     */
-        
+    public String gerarPontuacao(Partidas filtro) {
+    listaPalpite = palpiteDAO.getLista();
+         
+     return  "consulta_pontuacao";  
     }
-    
-
+   */ 
+}

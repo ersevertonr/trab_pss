@@ -3,6 +3,7 @@ package bolaoweb.modelDAO;
 
 import bolaoweb.hibernate.HibernateUtil;
 import bolaoweb.model.Palpite;
+import bolaoweb.model.Partidas;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,6 +45,15 @@ public class PalpiteDAO {
         session.close();
         return listaPalpite;
     }
+  /*public List<Palpite> getListaPontuacao(Partidas partida) {
+      session = HibernateUtil.getSessionFactory().openSession();
+      trans = session.beginTransaction();
+      Criteria criteria = session.createCriteria(Palpite.class, "palpite");
+      criteria.add(Restrictions.eq("palpite.partida", partida));
+      this.listaPalpite = criteria.list();
+      session.close();
+      return listaPalpite;
+    }*/
   public List<Palpite> getLista() {
     session = HibernateUtil.getSessionFactory().openSession();
 
