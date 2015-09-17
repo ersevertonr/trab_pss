@@ -66,18 +66,7 @@
                 </f:facet>
                 <h:outputText  value="#{tabela.golsVisitante}"/>
               </h:column>
-              <h:column>
-                <f:facet name="header">
-                  Ações
-                </f:facet>
-                <b:row>
-                  <b:column span="1"></b:column>
-                  <b:column span="4"><h:commandButton value="Editar" action="#{palpiteBEAN.carregaPalpite(tabela)}" styleClass="input"/></b:column>
-                  <b:column span="1"></b:column>
-                  <b:column span="4"><h:commandButton value="Remover" action="#{palpiteBEAN.excluirPalpite(tabela)}" styleClass="input"/></b:column>
-                  <b:column span="1"></b:column>
-                </b:row>
-              </h:column>
+              
             </h:dataTable>
             <br/>
           </b:container>

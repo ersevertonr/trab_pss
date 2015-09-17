@@ -19,6 +19,8 @@ public class Apostador extends Usuario{
     private Date datanascimento;
     @Column
     private int Pontuacao;
+    @Column
+    private int Posicao;
     public String getApelido() {
         return apelido;
     }
@@ -41,6 +43,14 @@ public class Apostador extends Usuario{
 
     public void setPontuacao(int Pontuacao) {
         this.Pontuacao = Pontuacao;
+    }
+
+    public int getPosicao() {
+        return Posicao;
+    }
+
+    public void setPosicao(int Posicao) {
+        this.Posicao = Posicao;
     }
 
     

@@ -117,7 +117,7 @@ public class Partidas implements Serializable{
     }
 
     public void setConfronto() {
-        confronto = timeCasa.getNome() + "X" + timeVisitante.getNome();
+        confronto = timeCasa.getNome() + " X " + timeVisitante.getNome();
        
         
     }

@@ -94,6 +94,7 @@ public class ApostadorBEAN {
         apostador.setApelido(null);
         apostador.setDatanascimento(null);
         apostador.setPontuacao(0);
+        apostador.setPosicao(0);
         return "cadastro_apostador";
     }
 

@@ -90,7 +90,7 @@ public class PalpiteBEAN {
       return false;
     }
     final PalpiteBEAN other = (PalpiteBEAN) obj;
-    if (!Objects.equals(this.palpite, other.palpite)) {
+    if (!Objects.equals(this.palpite.getId(), other.palpite.getId())) {
       return false;
     }
     return true;
@@ -98,7 +98,7 @@ public class PalpiteBEAN {
 
   public String carregaPalpite(Palpite p) {
     palpite = p;
-    return "cadastro_palpite";
+    return "alterar_palpite";
   }
 
   public String novoPalpite(Partidas partida) {

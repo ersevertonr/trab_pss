@@ -61,6 +61,7 @@ public class LoginBEAN {
         apostadorTemp.setEmail("marcelo@teste.com.br");
         apostadorTemp.setSenha("Pinheiro");
         apostadorTemp.setPontuacao(0);
+        apostadorTemp.setPontuacao(0);
        
         if (listaApostador.isEmpty()){
             apostadorDAO.inserirApostador(apostadorTemp);

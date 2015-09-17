@@ -7,6 +7,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 public class ApostadorDAO {
@@ -18,11 +19,8 @@ public class ApostadorDAO {
     public List<Apostador> getLista( String filtro ){
         session = HibernateUtil.getSessionFactory().openSession();
 
-        Criteria crit = session.createCriteria(Apostador.class);
-
-        Criterion filtroNome = Restrictions.like("nome",filtro+"%");
-
-        crit.add(filtroNome);
+        Criteria crit = session.createCriteria(Apostador.class, "apostador");
+        crit.addOrder(Order.desc("apostador.Pontuacao"));
 
         this.listaApostador = crit.list();
         return listaApostador;
