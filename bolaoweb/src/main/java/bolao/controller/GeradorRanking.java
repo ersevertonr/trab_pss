@@ -39,6 +39,9 @@ public class GeradorRanking {
     }
     
     }
+
+    public GeradorRanking() {
+    }
     
     
 }

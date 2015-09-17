@@ -43,7 +43,9 @@ public class GeradordePontuacao {
     filtro.setFlag(true);
     partidaDAO.updatePartida(filtro);
         
-    }     
+    }  
+     GeradorRanking rank = new GeradorRanking();
+     rank.gerarRanking();
      return  "consulta_pontuacao";  
     }
    
