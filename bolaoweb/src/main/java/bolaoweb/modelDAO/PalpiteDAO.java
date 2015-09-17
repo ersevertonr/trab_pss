@@ -45,15 +45,16 @@ public class PalpiteDAO {
         session.close();
         return listaPalpite;
     }
-  /*public List<Palpite> getListaPontuacao(Partidas partida) {
+  public List<Palpite> getListaPontuacao(int partida) {
       session = HibernateUtil.getSessionFactory().openSession();
       trans = session.beginTransaction();
       Criteria criteria = session.createCriteria(Palpite.class, "palpite");
-      criteria.add(Restrictions.eq("palpite.partida", partida));
+      criteria.createAlias("palpite.partida", "partida");
+      criteria.add(Restrictions.eq("partida.id", partida));
       this.listaPalpite = criteria.list();
       session.close();
       return listaPalpite;
-    }*/
+    }
   public List<Palpite> getLista() {
     session = HibernateUtil.getSessionFactory().openSession();
 

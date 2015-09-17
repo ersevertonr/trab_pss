@@ -52,7 +52,10 @@ public class Apostador extends Usuario{
     public void setPosicao(int Posicao) {
         this.Posicao = Posicao;
     }
-
+    public void pontua(){
+    Pontuacao = Pontuacao +1;
+    
+    }
     
     
 }
