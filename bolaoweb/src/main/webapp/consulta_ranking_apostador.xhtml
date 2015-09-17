@@ -64,12 +64,13 @@
                             </b:column> 
                         </b:row>
                         <br/>
+                        
                         <h:dataTable value="#{apostadorBEAN.listarApostador()}" var="tabela" styleClass="tabela" headerClass="header" rowClasses="rowAntes,rowDepois">
                             <h:column>
                                 <f:facet name="header">
                                     Posição
                                 </f:facet>
-                                <h:outputText value="-"/>
+                                <h:outputText value="#{tabela.posicao} º"/>
                             </h:column>
                             <h:column>
                                 <f:facet name="header">
